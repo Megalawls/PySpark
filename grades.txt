@@ -1,0 +1,9 @@
+1|chemistry|120
+1|maths|50
+1|gender studies|75
+2|english|67
+2|biology|52
+2|computer science|140
+3|physics|14
+3|art|150
+3|interpretive dance|52
