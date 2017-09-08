@@ -55,5 +55,11 @@ subcategories.registerTempTable("subcategories")
 products.registerTempTable("products")
 sales.registerTempTable("sales")
 
-sql.sql("select prodname,\
-	 count(quantity) as totalsales, sum(quantity) as totalsold, round(sum(posale), 2) as totalincome from sales INNER JOIN products ON sales.prodid=products.prodid	group by prodname order by totalsales desc").show()
+#Shows which product have sold most, and have raised the most money
+sql.sql("select prodname, count(quantity) as totalsales, sum(quantity) as totalsold, round(sum(posale), 2) as totalincome from sales INNER JOIN products ON sales.prodid=products.prodid group by prodname order by totalsales desc").show()
+
+#shows which subcategories are most popular
+sql.sql("select subcatname, count(quantity) as totalsales, sum(quantity) as totalsold, round(sum(posale), 2) as totalincome from sales INNER JOIN products ON sales.prodid=products.prodid INNER JOIN subcategories on products.subcatid=subcategories.subcatid group by subcatname order by totalsales desc").show()
+
+#shows which subcategories are most popular
+sql.sql("select catname, count(quantity) as totalsales, sum(quantity) as totalsold, round(sum(posale), 2) as totalincome from sales INNER JOIN products ON sales.prodid=products.prodid INNER JOIN subcategories on products.subcatid=subcategories.subcatid INNER JOIN categories on categories.catid=subcategories.catid group by catname order by totalsales desc").show()
