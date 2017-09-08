@@ -1,0 +1,3 @@
+1|101|asian
+1|102|chinese
+1|103|fast food

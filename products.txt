@@ -1,0 +1,4 @@
+10|pepsi|103
+20|egg fried rice|102
+30|tescos finest tikka masala|101
+40|some cheap burger|103
